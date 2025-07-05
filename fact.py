@@ -2,20 +2,26 @@
 import argparse
 
 
-def fat(x: int) -> list:
-    lista = [1]
-    for i in range(2, x + 1):
-        n = i
-        l = reversed(range(1, i))
-        for j in l:
-            n *= j
-        lista.append(n)
+def fact(x: int) -> list:
+    """
+    Generate factorial sequence from 1 to x.
+    """
+    if x <= 0:
+        return []
+    seq = [1]
+    if x == 1:
+        return seq
 
-    return lista
+    curr_factorial = 1
+    for i in range(2, x + 1):
+        curr_factorial *= i
+        seq.append(curr_factorial)
+
+    return seq
 
 
 def main(x: int):
-    print(f"{x}:\t{fat(x)}")
+    print(f"{x}:\t{fact(x)}")
 
 
 if __name__ == "__main__":
