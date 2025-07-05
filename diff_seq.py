@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-import math
 import argparse
 from pprint import pprint
 
@@ -12,7 +11,7 @@ def diff_seq(n: int, s: int = SEQ_SIZE) -> list:
     x = 1
 
     # Base sequence
-    for i in range(s):
+    for i in range(s if n <= s else n + 1):
         seq.append(x**n)
         x += 1
     seqs.append(seq)
@@ -45,7 +44,7 @@ if __name__ == "__main__":
         "--s",
         type=int,
         required=True,
-        help="Sequence size",
+        help="Minimum sequence size.",
     )
     args = parser.parse_args()
     n = args.n
