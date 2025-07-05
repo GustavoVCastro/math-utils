@@ -3,7 +3,7 @@ import math
 import argparse
 
 """
-Almost here means all divisors other than 1
+Almost here means all divisors other than 1.
 """
 
 
@@ -16,7 +16,7 @@ def get_almost_all_divisors(x: int) -> set:
 
 
 """
-grp_lt means get relative primes less than x. x is the func. parameter
+grp_lt means Get Relative Primes of x that are Less Than x.
 """
 
 
@@ -35,13 +35,15 @@ def main(x: int):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Find all relative primes up to x")
+    parser = argparse.ArgumentParser(
+        description="Find relative primes of x that are less than x."
+    )
     parser.add_argument(
         "-x",
         "--x",
         type=int,
         required=True,
-        help="Number up to which the relative primes will be found",
+        help="Number up to which its relative primes will be found",
     )
     args = parser.parse_args()
     x = args.x
